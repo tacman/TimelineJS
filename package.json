@@ -28,7 +28,7 @@
         "mini-css-extract-plugin": "^2.6.0",
         "npm-run-all": "^4.1.5",
         "prompt": "^1.0.0",
-        "simple-git": "3.32.3",
+        "simple-git": "^3.36.0",
         "style-loader": "^1.2.1",
         "trash-cli": "^7.2.0",
         "webpack": "^5.96.1",

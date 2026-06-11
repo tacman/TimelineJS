@@ -248,7 +248,7 @@ test("linkify", () => {
 
 })
 
-test("parseYouTubeTime handles bar digit strings", () => {
+test("parseYouTubeTime handles bare digit strings", () => {
     expect(parseYouTubeTime('5')).toBe(5)
 })
 

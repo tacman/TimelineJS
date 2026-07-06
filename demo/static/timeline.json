@@ -1,0 +1,71 @@
+{
+  "title": {
+    "text": {
+      "headline": "The Great War in Context",
+      "text": "A local JSON feed shaped for a Symfony or API Platform endpoint. Events carry photos and descriptions; eras carry longer spans such as wars."
+    }
+  },
+  "eras": [
+    {
+      "start_date": { "year": "1914", "month": "07", "day": "28" },
+      "end_date": { "year": "1918", "month": "11", "day": "11" },
+      "text": { "headline": "World War I" }
+    }
+  ],
+  "events": [
+    {
+      "start_date": { "year": "1914", "month": "06", "day": "28" },
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Archduke_Franz_Ferdinand_of_Austria.jpg/512px-Archduke_Franz_Ferdinand_of_Austria.jpg",
+        "caption": "Archduke Franz Ferdinand",
+        "credit": "Wikimedia Commons"
+      },
+      "text": {
+        "headline": "Assassination in Sarajevo",
+        "text": "The assassination of Archduke Franz Ferdinand set off the July Crisis and the cascade of alliances that led to war."
+      }
+    },
+    {
+      "start_date": { "year": "1914", "month": "07", "day": "28" },
+      "end_date": { "year": "1918", "month": "11", "day": "11" },
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Trench_warfare_1917.jpg/640px-Trench_warfare_1917.jpg",
+        "caption": "Trench warfare on the Western Front",
+        "credit": "Wikimedia Commons"
+      },
+      "text": {
+        "headline": "World War I",
+        "text": "A global conflict reshaped borders, empires, finance, diplomacy, and civilian life. In the modern renderer this long span can appear both as an event and as an era band."
+      },
+      "overlays": [
+        { "label": "Span", "value": "4 years", "color": "#7a6f36" },
+        { "label": "Scope", "value": "Global" }
+      ],
+      "group": "War"
+    },
+    {
+      "start_date": { "year": "1917", "month": "04", "day": "06" },
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/President_Woodrow_Wilson_asking_Congress_to_declare_war_on_Germany%2C_2_April_1917.jpg/640px-President_Woodrow_Wilson_asking_Congress_to_declare_war_on_Germany%2C_2_April_1917.jpg",
+        "caption": "President Woodrow Wilson asks Congress for a declaration of war",
+        "credit": "Library of Congress"
+      },
+      "text": {
+        "headline": "United States enters the war",
+        "text": "The entry of the United States changed the scale of the conflict and accelerated mobilization across the Atlantic."
+      }
+    },
+    {
+      "start_date": { "year": "1918", "month": "11", "day": "11" },
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Armistice_Day_1918_Philadelphia.jpg/640px-Armistice_Day_1918_Philadelphia.jpg",
+        "caption": "Armistice Day celebrations in Philadelphia",
+        "credit": "Wikimedia Commons"
+      },
+      "text": {
+        "headline": "Armistice",
+        "text": "Fighting ended on the Western Front, though the political and economic consequences continued for decades."
+      }
+    }
+  ]
+}

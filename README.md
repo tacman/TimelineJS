@@ -25,6 +25,32 @@ The [authoritative documentation list](https://timeline.knightlab.com/docs/) is 
 * [Configuration options](https://timeline.knightlab.com/docs/options.html) (for more technical users)
 * [JSON configuration file format](https://timeline.knightlab.com/docs/json-format.html) for those who prefer not to use Google Sheets
 
+## Modern JSON-first runtime
+
+This fork is adding a parallel modern runtime for Symfony/AssetMapper-friendly use cases. The first checkpoint lives under `src/modern/` and intentionally avoids a local npm build for consuming apps. It imports as native browser ESM, fetches timeline JSON from an endpoint or static file, and renders events, eras, media, captions, groups, and overlay chips.
+
+Run the static demo from the repository root:
+
+```bash
+php -S 127.0.0.1:8011 -t .
+```
+
+Then open:
+
+```text
+http://127.0.0.1:8011/demo/static/index.html
+```
+
+Relevant files:
+
+* `src/modern/index.js` - no-build ESM renderer
+* `src/modern/timeline.css` - modern CSS for the prototype runtime
+* `demo/static/timeline.json` - JSON feed matching the endpoint contract
+* `docs/zm-endpoint.md` - JSON shape expected from zm/API Platform
+* `docs/adr/0001-json-first-modern-runtime.md` - architecture decision record
+
+The package metadata is not changed yet. Decide the import path and exports only after the first Symfony integration proves the runtime surface.
+
 ## Contributing to TimelineJS
 Are you trying to contribute to or develop TimelineJS3? [Here's where you should start.](https://github.com/NUKnightLab/TimelineJS3/blob/master/CONTRIBUTING.md)
 

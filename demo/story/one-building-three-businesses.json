@@ -1,0 +1,226 @@
+{
+  "story": {
+    "id": "one-building-three-businesses",
+    "title": "Three Businesses, One Building",
+    "subtitle": "Broadie's, Harrison's, and Stauffer's Pharmacy",
+    "dek": "A block-based exhibit shape inspired by Fortepan's FotoStory model: start with a folder of bookmarked photos, then order them into a narrative with contexts and connectors.",
+    "status": "draft-demo",
+    "source_url": "https://fortepan.us/exhibits/25-one-building-three-businesses",
+    "credits": [
+      "Inspired by Fortepan US exhibit 25, One Building, Three Businesses",
+      "Demo data uses source links and simplified text for contract exploration"
+    ]
+  },
+  "album": {
+    "id": "broadie-building-bookmarks",
+    "title": "Broadie Building bookmark folder",
+    "description": "A curated set of bookmarked photos and sources used to assemble the exhibit.",
+    "asset_ids": ["FI0021005", "FI0022551", "FI0022071", "FI0022181"]
+  },
+  "assets": [
+    {
+      "id": "FI0021005",
+      "type": "image",
+      "title": "The Broadie Building",
+      "date": "1909",
+      "creator": "Waverly Public Library / Fortepan IA",
+      "source_url": "https://fortepan.us/categories/all/FI0021005",
+      "media_url": "",
+      "rights": "CC-BY-SA 4.0",
+      "caption": "A Fortepan bookmark standing in for the hero image of the downtown Waverly building."
+    },
+    {
+      "id": "FI0022551",
+      "type": "image",
+      "title": "Broadie's storefront",
+      "date": "early 1900s",
+      "creator": "Waverly Public Library / Fortepan IA",
+      "source_url": "https://fortepan.us/categories/all/FI0022551",
+      "media_url": "",
+      "rights": "CC-BY-SA 4.0",
+      "caption": "The first business layer in the story: Broadie's drug, paint, and wallpaper business."
+    },
+    {
+      "id": "FI0022071",
+      "type": "image",
+      "title": "Harrison's Five and Dime",
+      "date": "1957-1973",
+      "creator": "Waverly Public Library / Fortepan IA",
+      "source_url": "https://fortepan.us/categories/all/FI0022071",
+      "media_url": "",
+      "rights": "CC-BY-SA 4.0",
+      "caption": "The second business layer: Harrison's expanded into the Broadie building."
+    },
+    {
+      "id": "FI0022181",
+      "type": "image",
+      "title": "Stauffer's Pharmacy",
+      "date": "1973-1990",
+      "creator": "Waverly Public Library / Fortepan IA",
+      "source_url": "https://fortepan.us/categories/all/FI0022181",
+      "media_url": "",
+      "rights": "CC-BY-SA 4.0",
+      "caption": "The third business layer: a pharmacy that kept the building in community memory."
+    }
+  ],
+  "contexts": [
+    {
+      "id": "ctx-same-place",
+      "type": "place",
+      "title": "Same storefront",
+      "body": "The exhibit is organized around one downtown Waverly building rather than a simple photo chronology."
+    },
+    {
+      "id": "ctx-bookmark-folder",
+      "type": "curation",
+      "title": "Bookmark folder",
+      "body": "The album is the editorial starting point: selected assets are ordered into blocks and then connected with claims."
+    },
+    {
+      "id": "quote-harrisons-candy",
+      "type": "memory",
+      "title": "Community memory",
+      "body": "Residents remember Harrison's as a place for candy, toys, gifts, and weekly shopping rituals."
+    },
+    {
+      "id": "quote-pharmacy-counter",
+      "type": "memory",
+      "title": "Pharmacy memory",
+      "body": "The pharmacy era connects the same building to prescriptions, soda fountain culture, and late-20th-century downtown commerce."
+    }
+  ],
+  "connectors": [
+    {
+      "id": "conn-same-building",
+      "type": "same_place",
+      "from": "FI0022551",
+      "to": "FI0022071",
+      "label": "Same building, different business",
+      "body": "The Broadie's and Harrison's blocks describe different business eras in the same storefront.",
+      "confidence": 1
+    },
+    {
+      "id": "conn-business-succession-1957",
+      "type": "business_succession",
+      "from": "business-broadies",
+      "to": "business-harrisons",
+      "date": "1957",
+      "label": "Broadie's gives way to Harrison's",
+      "body": "The story needs an explicit relationship between business eras, not only chronological ordering.",
+      "confidence": 0.9
+    },
+    {
+      "id": "conn-business-succession-1973",
+      "type": "business_succession",
+      "from": "business-harrisons",
+      "to": "business-stauffers",
+      "date": "1973",
+      "label": "Harrison's becomes Stauffer's Pharmacy",
+      "body": "A later block can point back to the same place and explain the transition into pharmacy use.",
+      "confidence": 0.9
+    },
+    {
+      "id": "conn-album-to-story",
+      "type": "derived_from",
+      "from": "broadie-building-bookmarks",
+      "to": "one-building-three-businesses",
+      "label": "Story derived from bookmark folder",
+      "body": "The album is not the story; it is the curated source pile that the story orders and explains.",
+      "confidence": 1
+    }
+  ],
+  "blocks": [
+    {
+      "id": "hero-building",
+      "type": "image_full",
+      "asset_id": "FI0021005",
+      "eyebrow": "Fortepan-style exhibit demo",
+      "title": "A storefront becomes a story container",
+      "body": "This demo treats the exhibit as ordered content blocks over a bookmark folder. The same building anchors the narrative while business eras, memories, and source relationships provide the structure.",
+      "context_ids": ["ctx-bookmark-folder"],
+      "connector_ids": ["conn-album-to-story"]
+    },
+    {
+      "id": "section-broadies",
+      "type": "section",
+      "date_range": "1900-1950",
+      "title": "Broadie's: drugs, paint, wallpaper",
+      "body": "The first section is an editorial chapter, not just an event. Its date range can feed a timeline projection, but the section order remains authorial."
+    },
+    {
+      "id": "block-broadies-storefront",
+      "type": "image_text",
+      "asset_id": "FI0022551",
+      "title": "A business anchors the block",
+      "body": "Broadie's gives the story its opening business identity. The asset is linked to a place context and to later business-succession connectors.",
+      "context_ids": ["ctx-same-place"],
+      "connector_ids": ["conn-same-building", "conn-business-succession-1957"]
+    },
+    {
+      "id": "section-harrisons",
+      "type": "section",
+      "date_range": "1957-1973",
+      "title": "Harrison's Five and Dime",
+      "body": "The story shifts to a different business era in the same location. This is where connectors become more useful than flat chronological sorting."
+    },
+    {
+      "id": "block-harrisons-storefront",
+      "type": "image_text",
+      "asset_id": "FI0022071",
+      "title": "The same building gains a new public memory",
+      "body": "Harrison's changes the building's meaning from an earlier druggist storefront to a five-and-dime destination remembered through shopping rituals and downtown life.",
+      "context_ids": ["ctx-same-place"],
+      "connector_ids": ["conn-same-building", "conn-business-succession-1973"]
+    },
+    {
+      "id": "block-harrisons-memories",
+      "type": "quote_group",
+      "title": "Community memories become content blocks",
+      "quote_ids": ["quote-harrisons-candy", "quote-pharmacy-counter"]
+    },
+    {
+      "id": "section-stauffers",
+      "type": "section",
+      "date_range": "1973-1990",
+      "title": "Stauffer's Pharmacy",
+      "body": "The final business layer keeps the same place visible while adding another use, another time range, and another set of memories."
+    },
+    {
+      "id": "block-stauffers-pharmacy",
+      "type": "image_text",
+      "asset_id": "FI0022181",
+      "title": "A pharmacy chapter closes the sequence",
+      "body": "The point is not just that Stauffer's happened later. The story records that it occupies the same narrative place and inherits the exhibit's accumulated context.",
+      "context_ids": ["ctx-same-place"],
+      "connector_ids": ["conn-business-succession-1973"]
+    },
+    {
+      "id": "block-timeline-projection",
+      "type": "timeline_strip",
+      "title": "Timeline as projection, not source of truth"
+    },
+    {
+      "id": "block-connectors",
+      "type": "connector_list",
+      "title": "Connectors carry the story logic",
+      "connector_ids": ["conn-same-building", "conn-business-succession-1957", "conn-business-succession-1973", "conn-album-to-story"]
+    },
+    {
+      "id": "block-credits",
+      "type": "credits",
+      "title": "Credits and source trail",
+      "body": "A Symfony UX Twig component should render this as stable HTML first, then allow JavaScript to hydrate the timeline strip, connector views, galleries, and other projections."
+    }
+  ],
+  "projections": {
+    "story": { "component": "ExhibitStory" },
+    "timeline": {
+      "type": "strip",
+      "items": [
+        { "label": "Broadie's", "start": "1900", "end": "1950", "block_id": "section-broadies" },
+        { "label": "Harrison's", "start": "1957", "end": "1973", "block_id": "section-harrisons" },
+        { "label": "Stauffer's Pharmacy", "start": "1973", "end": "1990", "block_id": "section-stauffers" }
+      ]
+    }
+  }
+}

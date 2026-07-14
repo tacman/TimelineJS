@@ -1,37 +1,21 @@
-TimelineJS3
-============
+# TimelineJS tacman fork
 
-TimelineJS v3: A Storytelling Timeline built in JavaScript.  https://timeline.knightlab.com
+Modern, no-build TimelineJS experiments and demos:
+
+https://tacman.github.io/TimelineJS/
 
 ## Overview
 
-TimelineJS is a tool designed to help people with minimal technical skill tell rich, dynamic stories on the web. Most people will create timelines using the [official authoring tool](http://timeline.knightlab.com/#make) and embed their creations using a snip of HTML code offered at the end of that process. 
+This fork started from [NUKnightLab/TimelineJS3](https://github.com/NUKnightLab/TimelineJS3) and is now focused on JSON-first, Symfony/AssetMapper-friendly runtime experiments. The GitHub Pages site shows the current work directly:
 
-For users of these content management systems (CMSes), there are plugins to facilitate the embedding process:
-
-* [Wordpress](https://wordpress.org/plugins/knight-lab-timelinejs/)
-* [MediaWiki](https://www.mediawiki.org/wiki/Extension:Modern_Timeline)
-* [Drupal](https://www.drupal.org/docs/8/modules/views-timelinejs)
-
+* [Timeline demo](https://tacman.github.io/TimelineJS/demo/static/index.html) - no-build runtime rendering events, eras, media, captions, groups, and overlay chips from a JSON feed
+* [Exhibit story demo](https://tacman.github.io/TimelineJS/demo/story/index.html) - no-build runtime rendering a curated bookmark folder as ordered blocks with assets and connectors
 
 ## Getting Started
 
-General users of TimelineJS should consult [timeline.knightlab.com](https://timeline.knightlab.com) for instructions and documentation. Information on GitHub is primarily directed at those who are interested in working with the TimelineJS source code.
+Run the static demos from the repository root:
 
-The [authoritative documentation list](https://timeline.knightlab.com/docs/) is also on the main website, but here are some direct links which may be useful:
-
-* [Available media types](https://timeline.knightlab.com/docs/media-types.html), relevant to users of any technical level
-* [Instantiate a Timeline in your page instead of using an embed](https://timeline.knightlab.com/docs/instantiate-a-timeline.html)
-* [Configuration options](https://timeline.knightlab.com/docs/options.html) (for more technical users)
-* [JSON configuration file format](https://timeline.knightlab.com/docs/json-format.html) for those who prefer not to use Google Sheets
-
-## Modern JSON-first runtime
-
-This fork is adding parallel modern runtimes for Symfony/AssetMapper-friendly use cases. The first checkpoint lives under `src/modern/` and intentionally avoids a local npm build for consuming apps. The timeline runtime imports as native browser ESM, fetches timeline JSON from an endpoint or static file, and renders events, eras, media, captions, groups, and overlay chips. The exhibit-story runtime models a curated bookmark folder as ordered blocks with assets, contexts, and connectors.
-
-Run the static demo from the repository root:
-
-```bash
+```sh
 php -S 127.0.0.1:8011 -t .
 ```
 
@@ -41,6 +25,10 @@ Then open:
 http://127.0.0.1:8011/demo/static/index.html
 http://127.0.0.1:8011/demo/story/index.html
 ```
+
+## Modern JSON-first runtime
+
+This fork is adding parallel modern runtimes for Symfony/AssetMapper-friendly use cases. The first checkpoint lives under `src/modern/` and intentionally avoids a local npm build for consuming apps. The timeline runtime imports as native browser ESM, fetches timeline JSON from an endpoint or static file, and renders events, eras, media, captions, groups, and overlay chips. The exhibit-story runtime models a curated bookmark folder as ordered blocks with assets, contexts, and connectors.
 
 Relevant files:
 
@@ -54,14 +42,13 @@ Relevant files:
 * `docs/zm-endpoint.md` - timeline JSON shape expected from zm/API Platform
 * `docs/adr/0001-json-first-modern-runtime.md` - architecture decision record
 
-The package metadata is not changed yet. Decide the import path and exports only after the first Symfony integration proves the runtime surface.
+## Upstream TimelineJS
 
-## Contributing to TimelineJS
-Are you trying to contribute to or develop TimelineJS3? [Here's where you should start.](https://github.com/NUKnightLab/TimelineJS3/blob/master/CONTRIBUTING.md)
+The original TimelineJS project and historical documentation live at [NUKnightLab/TimelineJS3](https://github.com/NUKnightLab/TimelineJS3). This fork keeps the upstream codebase available while the modern runtime evolves alongside it.
 
 ## API
 
-For users who instantiate a timeline in a page (as opposed to using the iframe embed model), [this page](https://github.com/NUKnightLab/TimelineJS3/blob/master/API.md) roughly documents TimelineJS's JavaScript API, but note that because TimelineJS's primary use case is the embedded iframe, some of these methods have not been thoroughly tested.
+For the original TimelineJS API, see [API.md](API.md). For the modern no-build runtime, start with `src/modern/index.js` and `src/modern/story.js`.
 
 ## Use via ES6 modules/webpack
 

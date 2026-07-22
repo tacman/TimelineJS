@@ -1,5 +1,6 @@
 3.9.12 (not yet released)
 -------------------------
+* Modify handling of innerHTML to block potential malicious XSS
 * Fix bug: youtube URLs with `?t=\d+` (without `s`) should be treated as "start at N seconds"
 
 3.9.11 (2026-04-17)

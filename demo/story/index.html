@@ -44,12 +44,16 @@
   <script type="module">
     import { loadStory } from '../../src/modern/story.js';
 
-    try {
-      await loadStory('#story', './one-building-three-businesses.json');
-    } catch (error) {
-      document.querySelector('#story').textContent = error.message;
-      console.error(error);
+    async function initStory() {
+      try {
+        await loadStory('#story', './one-building-three-businesses.json');
+      } catch (error) {
+        document.querySelector('#story').textContent = error.message;
+        console.error(error);
+      }
     }
+
+    initStory();
   </script>
 </body>
 </html>

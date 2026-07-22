@@ -2,7 +2,7 @@
     "name": "@knight-lab/timelinejs",
     "version": "3.9.12",
     "license": "MPL-2.0",
-    "description": "TimelineJS v3: A Storytelling Timeline built in JavaScript, made by Northwestern University Knight Lab.",
+    "description": "TimelineJS fork with modern, no-build JSON-first demos for Symfony/AssetMapper-friendly integrations.",
     "dependencies": {
         "dompurify": "^3.1.7",
         "wicg-inert": "^3.1.2"
@@ -38,14 +38,14 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/NUKnightLab/TimelineJS3.git"
+        "url": "git+https://github.com/tacman/TimelineJS.git"
     },
     "keywords": [],
     "author": "Northwestern University Knight Lab",
     "bugs": {
-        "url": "https://github.com/NUKnightLab/TimelineJS3/issues"
+        "url": "https://github.com/tacman/TimelineJS/issues"
     },
-    "homepage": "https://timeline.knightlab.com",
+    "homepage": "https://tacman.github.io/TimelineJS/",
     "scripts": {
         "test": "jest",
         "dist": "run-s clean build",

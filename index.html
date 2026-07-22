@@ -26,7 +26,7 @@
     <p class="lede">
         A fork of <a href="https://github.com/NUKnightLab/TimelineJS3" target="_blank" rel="noopener">NUKnightLab/TimelineJS3</a>
         adding a modern, no-build, JSON-first runtime alongside the original webpack-bundled
-        library &mdash; built for Symfony/AssetMapper-friendly integrations.
+        library &mdash; built for Symfony/AssetMapper-friendly integrations. This fork does not support the Knight Lab authoring tool; consuming apps should provide timeline or exhibit-story JSON directly.
     </p>
 
     <ul class="links">
@@ -35,12 +35,16 @@
             <small>No-build runtime rendering events, eras, media, captions, groups, and overlay chips from a JSON feed</small>
         </li>
         <li>
+            <a href="https://timeline.knightlab.com/docs/json-format.html">TimelineJS JSON format</a>
+            <small>The timeline runtime consumes this JSON shape directly; it does not use the authoring tool or Google Sheets publishing flow</small>
+        </li>
+        <li>
             <a href="demo/story/index.html">Exhibit story demo</a>
             <small>No-build runtime rendering a curated bookmark folder as ordered blocks with assets and connectors</small>
         </li>
         <li>
             <a href="README.md">README</a>
-            <small>Overview, modern runtime docs, and links to the original TimelineJS documentation</small>
+            <small>Overview, TimelineJS JSON format links, modern runtime docs, and story contract links</small>
         </li>
         <li>
             <a href="https://github.com/tacman/TimelineJS">GitHub repo</a>

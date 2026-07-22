@@ -6,7 +6,7 @@ https://tacman.github.io/TimelineJS/
 
 ## Overview
 
-This fork started from [NUKnightLab/TimelineJS3](https://github.com/NUKnightLab/TimelineJS3) and is now focused on JSON-first, Symfony/AssetMapper-friendly runtime experiments. The GitHub Pages site shows the current work directly:
+This fork is based on [NUKnightLab/TimelineJS3](https://github.com/NUKnightLab/TimelineJS3) and is now focused on JSON-first, Symfony/AssetMapper-friendly runtime experiments. It does not support the Knight Lab authoring tool or Google Sheets publishing workflow. The GitHub Pages site shows the current work directly:
 
 * [Timeline demo](https://tacman.github.io/TimelineJS/demo/static/index.html) - no-build runtime rendering events, eras, media, captions, groups, and overlay chips from a JSON feed
 * [Exhibit story demo](https://tacman.github.io/TimelineJS/demo/story/index.html) - no-build runtime rendering a curated bookmark folder as ordered blocks with assets and connectors
@@ -28,7 +28,53 @@ http://127.0.0.1:8011/demo/story/index.html
 
 ## Modern JSON-first runtime
 
-This fork is adding parallel modern runtimes for Symfony/AssetMapper-friendly use cases. The first checkpoint lives under `src/modern/` and intentionally avoids a local npm build for consuming apps. The timeline runtime imports as native browser ESM, fetches timeline JSON from an endpoint or static file, and renders events, eras, media, captions, groups, and overlay chips. The exhibit-story runtime models a curated bookmark folder as ordered blocks with assets, contexts, and connectors.
+This fork is adding parallel modern runtimes for Symfony/AssetMapper-friendly use cases. The first checkpoint lives under `src/modern/` and intentionally avoids a local npm build for consuming apps. The runtime expects application-owned JSON from an endpoint or static file, not generated embed code from the official authoring tool.
+
+For timelines, the required JSON shape follows the [TimelineJS JSON format documented by Knight Lab](https://timeline.knightlab.com/docs/json-format.html)
+
+The minimum useful shape is:
+
+```json
+{
+  "title": {
+    "text": {
+      "headline": "Collection timeline",
+      "text": "Optional introduction"
+    }
+  },
+  "eras": [],
+  "events": [
+    {
+      "start_date": { "year": "1917", "month": "04", "day": "06" },
+      "text": {
+        "headline": "United States enters the war",
+        "text": "Displayed body copy"
+      },
+      "media": {
+        "url": "https://example.test/media/artifact-123.jpg",
+        "caption": "Displayed caption",
+        "credit": "Source or rights statement"
+      }
+    }
+  ]
+}
+```
+
+For exhibit stories, the required JSON shape is:
+
+```json
+{
+  "story": {},
+  "album": {},
+  "assets": [],
+  "blocks": [],
+  "connectors": [],
+  "contexts": [],
+  "projections": {}
+}
+```
+
+The timeline renderer imports as native browser ESM and renders events, eras, media, captions, groups, and overlay chips. The exhibit-story runtime models a curated bookmark folder as ordered blocks with assets, contexts, and connectors.
 
 Relevant files:
 

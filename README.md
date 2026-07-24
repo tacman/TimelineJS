@@ -31,58 +31,20 @@ http://127.0.0.1:8011/demo/story/index.html
 
 This fork is adding parallel modern runtimes for Symfony/AssetMapper-friendly use cases. The first checkpoint lives under `src/modern/` and intentionally avoids a local npm build for consuming apps. The runtime expects application-owned JSON from an endpoint or static file, not generated embed code.
 
-For timelines, the required JSON shape follows the [TimelineJS JSON format documented by Knight Lab](https://timeline.knightlab.com/docs/json-format.html)
+The portable story definition now lives in [tacman/story-contract](https://github.com/tacman/story-contract). That repository defines the framework-neutral JSON/YAML shape for authored stories built from bookmarks, saved searches, blocks, connections, and projections.
 
-The minimum useful shape is:
+PHP/Symfony-specific authoring and publishing concerns live in [survos/exhibit-bundle](https://github.com/survos/exhibit-bundle): Doctrine persistence, OpenFoto/zm bookmark authoring, YAML import/export, reference resolution, Twig components, and projection exporters.
 
-```json
-{
-  "title": {
-    "text": {
-      "headline": "Collection timeline",
-      "text": "Optional introduction"
-    }
-  },
-  "eras": [],
-  "events": [
-    {
-      "start_date": { "year": "1917", "month": "04", "day": "06" },
-      "text": {
-        "headline": "United States enters the war",
-        "text": "Displayed body copy"
-      },
-      "media": {
-        "url": "https://example.test/media/artifact-123.jpg",
-        "caption": "Displayed caption",
-        "credit": "Source or rights statement"
-      }
-    }
-  ]
-}
-```
+TimelineJS-compatible JSON remains useful as an adapter target, and the old format is documented by Knight Lab at [TimelineJS JSON format](https://timeline.knightlab.com/docs/json-format.html). It is not the canonical authoring format for these story tools.
 
-For exhibit stories, the required JSON shape is:
-
-```json
-{
-  "story": {},
-  "album": {},
-  "assets": [],
-  "blocks": [],
-  "connectors": [],
-  "contexts": [],
-  "projections": {}
-}
-```
-
-The timeline renderer imports as native browser ESM and renders events, eras, media, captions, groups, and overlay chips. The exhibit-story runtime models a curated bookmark folder as ordered blocks with assets, contexts, and connectors.
+The timeline renderer imports as native browser ESM and renders events, eras, media, captions, groups, and overlay chips. The exhibit-story runtime demonstrates one projection of the external story contract.
 
 Relevant files:
 
 * `src/modern/story.js` - no-build exhibit story renderer
 * `src/modern/story.css` - exhibit story demo styles
 * `demo/story/one-building-three-businesses.json` - FotoStory-shaped exhibit contract demo
-* `docs/story-contract.md` - exhibit story contract and Symfony UX Twig component boundary
+* `docs/story-contract.md` - pointer to the external story contract and Symfony bundle repos
 * `src/modern/index.js` - no-build timeline renderer
 * `src/modern/timeline.css` - modern CSS for the prototype runtime
 * `demo/static/timeline.json` - JSON feed matching the endpoint contract
